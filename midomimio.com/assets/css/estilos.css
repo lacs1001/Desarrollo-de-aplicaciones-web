@@ -1,0 +1,41 @@
+#header1 {
+		background: red;
+	}
+
+	.header
+	{
+		font-family: arial;
+	}
+
+	
+	header	
+	{
+		font-size: 50px;
+	}
+
+	header nav ul
+	{
+		margin: 0px;	
+	}
+
+	body
+	{
+		margin: 0px;
+	}
+
+	header nav ul li
+	{
+		width: 300px;
+		height: 80px;
+		border: 2px;
+		padding: 10px;
+		border-style: solid;
+
+		display: inline;
+		
+	}
+
+	header nav ul li:hover
+	{
+		background: blue;
+	}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="">
+	<script type="text/javascript" src=""></script>
+
+	<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+
+	$(document).ready(function(){
+		
+		console.log("estamos usando jquery");
+
+	});
+
+
+		//alert("hola mundo");
+		console.log("linea 2");
+
+		document.write("texto 1");
+
+	var i;
+
+	i=20;
+
+	i="hola";
+
+	i=10.5;
+
+	i=new Array(new Array("5"),2,3);
+
+	i={"id":1};
+
+	//MODULOS 
+
+	j=10%3;
+
+	k=10;
+
+</script>
+
+</head>
+<body>
+<h1 id="msg1">Hola mundo</h1>
+
+
+<script type="text/javascript">
+	
+	console.log("el valor de i="+i.id);
+
+	console.log("el valor de j="+j);
+
+	k=k+1;
+
+	k++;
+
+	k+=5;
+
+	k--;
+
+	k-=5;
+
+	k+=15;
+	console.log("el valor de k="+k);
+
+
+	if(k>15)
+	{
+		console.log("k es mayor a 15")
+	}
+	else
+	{
+		console.log("k es menor a 15")
+	}
+
+	if(k>15)console.log("k es mayor a 15")
+	else console.log("k es menor a 15");
+
+	
+	(k>15)?console.log("k es mayor2 a 15"):console.log("k es menor a 15");	
+
+
+	k-=10;
+	switch(k)
+	{
+		case 15:console.log("switch - el valor de k es 15");break;
+		case 16:console.log("switch - el valor de k es 16");break;
+		case 17:console.log("switch - el valor de k es 17");break;
+		default:console.log("switch - el valor de k no se encuentra");break;
+	}
+
+
+	for(z=20;z<=10;z++)
+	{
+		console.log("FOR - el valor e z="+z);
+	}
+
+	count=20;
+	do
+	{
+		console.log("DO WHILE - el contador ="+count);
+		count++;
+	}
+	while(count<10);
+
+	count=1;
+	while(count<10)
+	{
+		console.log("WHILE - el contador ="+count);
+		count++;
+	}
+
+	///funciones
+
+
+
+	function suma(a,b)
+	{
+		return a+b;
+	}
+
+
+	console.log("la suma de 5+10="+suma(5,10));
+
+
+	/// factorial 
+	// !2 = 1*2
+	// !3 = 3*2*1
+
+
+	function factorial(numero) {
+		
+		if(numero>1)
+			return numero*factorial(numero-1);
+
+		return numero;
+	}
+
+	var num_fact=5;
+	console.log("el factorial de "+num_fact+" ="+factorial(num_fact));
+
+	function guardar()
+	{
+		console.log("ha hecho click al guardar");
+	}
+
+	function cambiarColor() {
+	
+		document.getElementById("msg1").style.color="#0000FF";	
+	}
+
+
+	
+
+</script>
+
+
+<button onclick="guardar()">guardar</button>
+<button onclick="cambiarColor()">Cambiar color</button>
+
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/estilos.css">
+
+	<style type="text/css">
+		
+		h1 
+		{
+			font-size: 16px;
+			font-family: arial;
+		}
+
+		.titulo_princial
+		{
+
+		}
+
+
+
+	</style>
+
+</head>
+<body>
+
+	<header id="header1" class="header">
+		<nav>
+			<div class="logo"></div>
+			<ul>
+				<li id="home">HOME</li>
+				<li>PRODUCT</li>
+				<li>PROMO</li>
+				<li>ABOUT</li>
+				<li>CONTACT</li>
+			</ul>
+
+		</nav>
+	</header>
+	<main>
+		<div id="slider">
+			
+			<img src="assets/img/img1.jpg" id="img1" style="display:none" width="800">
+			<img src="assets/img/img2.webp" id="img2" style="display: none;" width="800">
+			<img src="assets/img/img3.webp" id="img3" style="display:none" width="800">
+
+
+		</div>
+		<section id="colaboradores"></section>
+		<section id="seccion1"></section>
+		<section id="seccion2"></section>
+		<section id="estadisticas"></section>
+		<section id="populares"></section>
+		<section id="testimonios"></section>
+		<section id="suscripcion"></section>
+	</main>
+	<footer></footer>
+
+ 	<!--
+	<button onclick="document.getElementById('home').style.display='none'">ocultar</button>
+	-->
+
+<script type="text/javascript">
+
+// var _header=document.getElementById("home")
+
+// _header.style.display="none";
+	
+ //console.log(_header);
+
+var currentImmage=1;
+
+setInterval(function(){
+
+	document.getElementById('img'+currentImmage).style.display="block";
+
+	if(currentImmage>1)
+	document.getElementById('img'+(currentImmage-1)).style.display="none";
+	else
+	document.getElementById('img'+(3)).style.display="none";	
+
+
+	currentImmage++;
+
+	if(currentImmage>3)
+		currentImmage=1;
+
+},3000);
+
+
+</script>
+
+</body>
+</html>
