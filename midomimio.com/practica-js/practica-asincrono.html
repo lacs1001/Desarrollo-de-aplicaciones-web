@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+
+var proc1,proc2;
+$(document).ready(function(){
+
+	$("#pantalla1").append("hola como estas");
+	$("#pantalla1").append("<br>");
+	$("#pantalla1").append("muy bien");
+	$("#pantalla1").append("<br>");
+	$("#pantalla1").append("yo tambien ");
+
+	$("#pantalla1").append("yo tambien11111 ");
+	imprime1();
+	imprime2();
+	imprime1();
+	imprime1();
+	//imprime1();
+
+	//proc1=setInterval(imprime1,2000);
+	//proc2=setInterval(imprime2,2000);
+
+	//setTimeout(imprime1,2000);
+	//setTimeout(imprime1,3000);
+	
+
+	//setTimeout(imprime2,2000);
+
+	//$("#contenedor").load("http://www.approachbtl.com");
+
+
+	$.ajax(
+		{
+			method:"get",
+			url:"http://apis.miapp.com/api/v1/productos"
+		}
+	)
+	.done(function(response){
+
+		for(i=0;i<response.data.length;i++)
+		{
+			$("#contenedor").append(response.data[i].nombre+"<br>");
+		}
+
+	});
+
+	
+
+
+
+});	
+
+
+
+
+
+function imprime1()
+{
+	$("#pantalla1").append("<br>");
+	$("#pantalla1").append("imprime en pantalla 1");
+
+	
+	//clearInterval(proc1);
+	
+}
+function imprime2()
+{
+	$("#pantalla2").append("<br>");
+	$("#pantalla2").append("imprime en pantalla 2");
+
+	//clearInterval(proc2);
+	
+}
+
+
+</script>
+</body>
+
+<div id="pantalla1" style="float: left; height: 200px; background: red; display:inline-block;width: 50%;">
+pantalla 1	<br><br>
+</div>
+
+<div id="pantalla2" style="height: 200px; background: blue; display:inline-block;width: 50%;">
+	pantalla 2
+</div>
+
+
+<div id="contenedor"></div>
+
+</html>

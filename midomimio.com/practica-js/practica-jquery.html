@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script type="text/javascript">
+		
+		/*
+		$(document).ready(f1);
+
+		function f1()
+		{
+			$("#obj1").append("hola1");	
+		}*/
+
+		$(document).ready(function(){
+
+			$("#obj1").append("hola1");	
+
+			//$("#img1").show(1000);
+
+			//$("#img1").hide(2000);
+
+			//$("#img1").fadeIn(5000);
+
+			$("#img1").slideUp(5000);
+
+
+			$("#obj1").css("color","#ff4455");	
+			$("#obj1").css("font-size","50px");	
+
+
+			//$("#contenedor").load("pagina2.html");
+
+
+		});
+
+		
+	</script>
+	
+</head>
+<body>
+
+
+<img id="img1" width="500" style="display: none;" src="https://www.wallpaperup.com/uploads/wallpapers/2014/12/20/559645/8f8d0d56958ee83c73d711468c1615f5.jpg">
+
+<div id="obj1" class="estilo1">
+obj1
+</div>
+
+
+<div id="obj2" class="estilo1">
+obj2
+</div>
+
+
+<div id="contenedor"></div>
+
+</body>
+</html>
