@@ -47,6 +47,8 @@ $(document).ready(function(){
 	)
 	.done(function(response){
 
+		console.log(response);
+
 		for(i=0;i<response.data.length;i++)
 		{
 			$("#contenedor").append(response.data[i].nombre+"<br>");
@@ -83,6 +85,24 @@ function imprime2()
 }
 
 
+
+function guardarProducto()
+{
+	$.ajax(
+		{
+			method:"post",
+			data:{codigo:$("#txtCodigo").val(),nombre:$("#txtNombre").val(),categoria:$("#txtCategoria").val(),precio:$("#txtPrecio").val()},
+			url:"http://apis.miapp.com/api/v1/productos"
+		}
+	)
+	.done(function(response){
+
+		console.log("el producto se guardo correctamente");
+
+	});
+}
+
+
 </script>
 </body>
 
@@ -96,5 +116,26 @@ pantalla 1	<br><br>
 
 
 <div id="contenedor"></div>
+
+
+<div>
+
+<label>codigo</label>	
+<input type="text" name="txtCodigo" id="txtCodigo">
+
+
+<label>Nombre</label>	
+<input type="text" name="txtNombre" id="txtNombre">
+
+
+<label>Categoria</label>	
+<input type="text" name="txtCategoria" id="txtCategoria">
+
+<label>Precio</label>	
+<input type="text" name="txtPrecio" id="txtPrecio">
+
+</div>
+
+<button onclick="guardarProducto()">Guardar</button>
 
 </html>
