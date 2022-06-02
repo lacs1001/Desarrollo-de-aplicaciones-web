@@ -17,6 +17,8 @@
 
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -36,11 +38,10 @@
       </li>
     </ul>
 
+    <!-- Right navbar links -->
     
   </nav>
   <!-- /.navbar -->
-
-
 
 
 
@@ -73,7 +74,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/home.html" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -83,22 +84,23 @@
             
           </li>
           <li class="nav-item">
-            <a href="home.html" class="nav-link active">
+            <a href="/home.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Productos
               </p>
             </a>
           </li>
-          
+
           <li class="nav-item">
-            <a href="/categorias.html" class="nav-link">
+            <a href="widgets.html" class="nav-link active">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Categorias
               </p>
             </a>
           </li>
+          
         
           
           
@@ -121,12 +123,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Productos</h1>
+            <h1>Categorias</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Productos</li>
+              <li class="breadcrumb-item active">Categorias</li>
             </ol>
           </div>
         </div>
@@ -140,13 +142,12 @@
          
          <div class="col-12">
 
-          <table id="listProductos" class="display">
+          <table id="listCategorias" class="display">
         <thead>
                   <tr>
                       <th>Codigo</th>
                       <th>Nombre</th>
-                      <th>Categoria</th>
-                      <th>Precio</th>
+                      
                   </tr>
               </thead>
       </table>
@@ -193,24 +194,33 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 
 
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
 
 <script type="text/javascript">
   
 $(document).ready(function(){
 
 
-$('#listProductos').DataTable( {
+$('#listCategorias').DataTable( {
         "ajax":{
             type: 'get',
-            url: "http://apis.miapp.com/api/v1/productos",
+            url: "http://apis.miapp.com/api/v1/categorias",
             dataSrc: 'data',
             cache: true
             },
         columns: [
             { data: 'codigo' },
-            { data: 'nombre' },
-            { data: 'categoria' },
-            { data: 'precio' }
+            { data: 'nombre' }
+            
+        ],
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
         ]
 
     });
