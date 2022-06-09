@@ -1,0 +1,75 @@
+<div class="modal fade" id="mdlConfirmarEliminarProducto">
+        <div class="modal-dialog">
+
+          <div class="modal-content">
+           
+            <div class="modal-header">
+              <h4 class="modal-title">Eliminar producto</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+            
+
+            <form id="frmEliminarProducto">
+                <div class="card-body">
+                  
+                  <input type="hidden" name="frmEliminarProducto_txtID" id="frmEliminarProducto_txtID">
+
+                  <h6>¿Está seguro de eliminar el producto?</h6>
+
+                  
+
+
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Si</button>
+                  <button type="button" data-dismiss="modal" class="btn btn-secondary">No</button>
+                </div>
+              </form>
+
+
+
+            </div>
+            <div class="modal-footer justify-content-between">
+              
+            </div>
+
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+
+<script type="text/javascript">
+
+
+  $("#frmEliminarProducto").submit(function(e) {
+    e.preventDefault();
+
+
+      $.ajax(
+      {
+        method:"delete",
+        url:"http://apis.miapp.com/api/v1/productos/"+$("#frmEliminarProducto_txtID").val()
+      }
+    )
+    .done(function(response){
+      console.log("el producto se guardo correctamente");
+      
+      reloadTableProductos();
+      $("#mdlConfirmarEliminarProducto").modal('hide');      
+
+    });
+
+
+  });
+  
+
+
+</script>
