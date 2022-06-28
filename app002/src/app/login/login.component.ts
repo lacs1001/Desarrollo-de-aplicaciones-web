@@ -21,7 +21,19 @@ export class LoginComponent implements OnInit {
       
        localStorage.setItem('_token', response.data.token);
 
-       document.location.href="/";
+      this.obtenerUsuario();
+       
+
+    });
+  }
+
+  obtenerUsuario()
+  {
+    this.autenticacion.getUser().subscribe((response:any)=>{
+
+        console.log(response);
+        localStorage.setItem('_user', JSON.stringify(response.data));
+        document.location.href="/";
 
     });
   }

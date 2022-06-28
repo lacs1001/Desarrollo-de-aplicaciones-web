@@ -23,12 +23,14 @@
               <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
                 <thead>
                   <tr>
+                    <th>IMAGEN</th>
                     <th>CODIGO</th>
                     <th>NOMBRE</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let producto of ListaProductos">
+                    <td><img height="30" src="http://apis.miapp.com{{producto.ruta_imagen}}"></td>
                     <td>{{producto.codigo}}</td>
                     <td>{{producto.nombre}}</td>
                     

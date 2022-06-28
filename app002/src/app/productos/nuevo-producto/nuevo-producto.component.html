@@ -7,10 +7,52 @@
       (click)="modalRef.close()"
     >X</button>
   </div>
-  <div class="modal-body">...</div>
+  <div class="modal-body">
+
+
+    
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+           
+            
+              <div class="form-group">
+                <label for="txtCodigo">Codigo</label>
+                
+                <input type="text" name="txtCodigo" [(ngModel)]="codigo" class="form-control" id="txtCodigo" placeholder="Código">
+              
+              </div>
+              <div class="form-group">
+                <label for="txtNombre">Nombre</label>
+                <input type="text" name="txtNombre" [(ngModel)]="nombre" class="form-control" id="txtNombre" placeholder="Nombre">
+              </div>
+            
+              <div class="form-group">
+                <label for="txtImagne">Imagen</label>
+                <input (change)="onChange($event)" type="file" name="txtImagen"  class="form-control" id="textImagen" placeholder="imagen">
+              </div>
+         
+           
+           
+            </div>
+          <!--/.col (left) -->
+          <!-- right column -->
+        
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+
+
+
+
+  </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
       Cerrar
     </button>
-    <button type="button" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-primary" (click)="guardarProducto()">Guardar</button>
   </div>
